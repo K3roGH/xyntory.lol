@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xyntory.lol - Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+  height: 100%;
+  overflow: auto;
+  font-family: 'JetBrains Mono', monospace;
+  background: black url('https://images.guns.lol/OxFJW.gif') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 2px solid #c084fc;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: #c084fc;
+      color: black;
+    }
+
+    .main {
+      padding: 40px 20px;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    .main h1 {
+      font-size: 3rem;
+      color: #c084fc;
+      margin-bottom: 30px;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      background: #222;
+      border: 2px solid #c084fc;
+      border-radius: 8px;
+      color: #c084fc;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .tab.active {
+      background: #c084fc;
+      color: black;
+    }
+
+    .project-content {
+      display: none;
+      animation: fadeIn 1s ease;
+    }
+
+    .project-content.active {
+      display: block;
+    }
+
+    .project {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .project img {
+      max-width: 90%;
+      height: auto;
+      border: 2px solid #c084fc;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .project p {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #ccc;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="https://xyntory.lol">Home</a>
+    <a href="https://Xyntory.lol/projects">Projects</a>
+    <a href="https://Xyntory.lol/about">About</a>
+  </nav>
+
+  <div class="main">
+    <h1>Projects</h1>
+
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab(0)">Imkero.lol</div>
+      <div class="tab" onclick="switchTab(1)">Fraud.ovh</div>
+      <div class="tab" onclick="switchTab(2)">Xyntory.lol</div>
+    </div>
+
+    <div class="project-content active">
+      <div class="project">
+          <img src="https://images.guns.lol/XYoGN.png" alt="Imkero.lol" />
+        </a>
+        <p>Imkero.lol — bio website for me and my friends.</p>
+      </div>
+    </div>
+
+    <div class="project-content">
+      <div class="project">
+          <img src="https://images.guns.lol/RDZWP.png" alt="Project 2" />
+        </a>
+        <p>Fraud.ovh, bio link i made that was fully functional, shut down due to lack of users and funds</p>
+      </div>
+    </div>
+
+    <div class="project-content">
+      <div class="project">
+          <img src="https://images.guns.lol/iFsG6.png" alt="Project 3" />
+        </a>
+        <p>Xyntory.lol, This website, Portfolio just for me</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.project-content');
+
+    function switchTab(index) {
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      tabs[index].classList.add('active');
+      contents[index].classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
